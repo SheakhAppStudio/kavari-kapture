@@ -1,15 +1,21 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --primary: #5F1DA6;
+  --primary-light: #7339B3;
+  --primary-dark: #4C0F8B;
+  --gold: #D4AF37;
+  --gold-light: #F2D175;
+  --gold-dark: #A6872D;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +28,47 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white py-2 px-6 rounded-lg hover:bg-primary-dark transition-colors;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary py-2 px-6 rounded-lg hover:bg-primary hover:text-white transition-colors;
+  }
+  
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20;
+  }
+  
+  .heading-lg {
+    @apply text-4xl md:text-5xl font-bold;
+  }
+  
+  .heading-md {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+  
+  .paragraph {
+    @apply text-base md:text-lg leading-relaxed;
+  }
+  
+  .gold-accent {
+    @apply text-gold font-medium;
+  }
+}
+
+/* Hide scrollbars but keep functionality */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
