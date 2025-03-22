@@ -17,8 +17,8 @@ const nextConfig = {
   output: 'export',
   // The following are needed when deploying to GitHub Pages
   // Comment these out for local development
-  // basePath: '/kavari-kapture-website',
-  // assetPrefix: '/kavari-kapture-website',
+  // basePath: '/kavarikapture',
+  // assetPrefix: '/kavarikapture',
 };
 
 module.exports = nextConfig; 
